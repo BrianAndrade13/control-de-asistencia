@@ -1,148 +1,151 @@
-Aplicación de Control de Asistencia
-Descripción del caso
+Aplicación de Control de Asistencia: Análisis, Requerimientos y Uso de Control de Versiones
+1. Introducción
 
-La Aplicación de Control de Asistencia es un sistema diseñado para registrar y gestionar la asistencia estudiantil mediante el uso de códigos QR y validación de horarios.
-Su propósito es automatizar el proceso de control en el aula, facilitar la labor del docente y ofrecer a los estudiantes un acceso rápido a su historial.
+La Aplicación de Control de Asistencia es un sistema orientado a automatizar los procesos de registro de asistencia en entornos educativos mediante el uso de códigos QR, validación de horarios y mecanismos de auditoría. Su objetivo principal es facilitar el trabajo docente, optimizar la gestión académica diaria y proporcionar a los estudiantes una herramienta confiable para consultar su historial de asistencia.
 
-El sistema está orientado a instituciones educativas que buscan una herramienta moderna, confiable y segura para el seguimiento académico diario.
+Este sistema está dirigido a instituciones educativas que buscan modernizar y digitalizar sus procesos internos mediante soluciones eficientes, seguras y escalables. Su diseño integra principios de ingeniería de software, buenas prácticas de documentación y el uso adecuado de control de versiones.
 
-Objetivos
+2. Objetivos del Sistema
 
-Desarrollar una aplicación funcional para registrar asistencias por sesión de clase.
+Los objetivos que guiaron el desarrollo de la aplicación son los siguientes:
 
-Aplicar principios de ingeniería de software: requerimientos, pruebas y validación.
+Desarrollar una herramienta funcional para registrar asistencias por sesión de clase.
 
-Utilizar control de versiones mediante Git y GitHub.
+Aplicar principios de ingeniería de software, incluyendo requerimientos, pruebas y validación.
 
-Documentar el caso siguiendo estándares profesionales en formato Markdown.
+Utilizar un sistema de control de versiones mediante Git y GitHub.
 
-Garantizar un registro seguro, verificable y rápido de la asistencia estudiantil.
+Documentar el avance del caso utilizando estándar profesional en formato Markdown.
 
-Requerimientos principales
-Requerimientos funcionales
+Garantizar un registro seguro, verificable y ágil de la asistencia estudiantil.
 
-Registrar asistencia mediante escaneo de código QR.
+3. Requerimientos del Sistema
+3.1 Requerimientos funcionales
 
-Permitir el registro manual con estados: Presente, Tarde y Ausente.
+Registrar asistencia mediante el escaneo de códigos QR.
 
-Validar que el registro se realice dentro de la ventana horaria establecida.
+Permitir registro manual con estados: Presente, Tarde y Ausente.
+
+Validar que el registro se realice únicamente dentro de la ventana horaria establecida.
 
 Generar reportes por curso o estudiante y exportarlos en formato CSV.
 
-Enviar notificaciones cuando un estudiante supere umbrales de inasistencias o tardanzas.
+Enviar notificaciones automáticas cuando un estudiante supere umbrales de inasistencias o tardanzas.
 
-Registrar toda modificación en una bitácora de auditoría.
+Registrar cambios y modificaciones en una bitácora de auditoría.
 
-Cerrar y anular sesiones de clase según permisos del docente.
+Permitir cerrar o anular sesiones de clase según permisos del docente.
 
-Requerimientos no funcionales
+3.2 Requerimientos no funcionales
 
-Interfaz clara, accesible y optimizada para web y dispositivos móviles.
+Interfaz intuitiva, accesible y optimizada tanto para web como para dispositivos móviles.
 
-Respuesta rápida en el registro (menos de 2 segundos).
+Tiempo de respuesta menor a 2 segundos en el registro de asistencia.
 
-Alta disponibilidad (≥ 99 %) en horario académico.
+Alta disponibilidad (≥ 99 %) durante el horario académico.
 
-Seguridad mediante HTTPS, autenticación por roles y registros inmutables.
+Seguridad mediante HTTPS, autenticación basada en roles y registros inmutables.
 
 Compatibilidad con navegadores modernos y sistemas Android/iOS.
 
-Tabla de pruebas funcionales
-Caso de prueba Entrada Resultado esperado Validación
-CP1 – Registro válido por QR Escaneo de QR correcto Marca “Presente” en ≤ 2 segundos ✅ Correcto
-CP2 – Fuera de horario Escaneo después de la ventana permitida Registro rechazado ✅ Correcto
-CP3 – Duplicado de QR Escaneo del mismo QR dos veces Muestra error “QR ya registrado” ✅ Correcto
-CP4 – Corrección manual Estado modificado por docente Bitácora registra usuario, fecha y motivo ✅ Correcto
-CP5 – Notificación por umbral Estudiante supera límite Envío automático de notificación ✅ Correcto
-Tipo de mantenimiento propuesto
+4. Pruebas Funcionales
+
+A continuación se presenta una tabla de casos de prueba diseñados para validar la funcionalidad del sistema:
+
+Caso de prueba	Entrada	Resultado esperado	Validación
+CP1 – Registro válido por QR	Escaneo correcto del QR	Marca “Presente” en ≤ 2 s	✔ Correcto
+CP2 – Fuera de horario	Escaneo fuera de la ventana permitida	Registro rechazado	✔ Correcto
+CP3 – Duplicado de QR	Escaneo repetido del mismo QR	Error: “QR ya registrado”	✔ Correcto
+CP4 – Corrección manual	Estado modificado por docente	Bitácora registra usuario, fecha y motivo	✔ Correcto
+CP5 – Notificación por umbral	Estudiante supera límite	Se envía notificación automática	✔ Correcto
+5. Tipo de Mantenimiento Propuesto
 Mantenimiento Perfectivo
 
-Este mantenimiento se centra en mejorar la funcionalidad existente y optimizar la experiencia del usuario sin modificar el propósito principal del sistema.
+El mantenimiento realizado se centra en mejorar las funcionalidades existentes sin alterar el propósito central del sistema. Este tipo de mantenimiento permite refinar procesos internos, optimizar el rendimiento y mejorar la experiencia de los usuarios.
 
 Mejoras implementadas o sugeridas
 
 Panel de estadísticas con indicadores de asistencia.
 
-Filtros avanzados para reportes.
+Filtros avanzados en los reportes.
 
-Exportación en PDF y visualizaciones gráficas.
+Exportación de reportes a PDF y visualizaciones gráficas.
 
 Generación automática de códigos QR dinámicos por sesión.
 
 Modo offline temporal para docentes con sincronización posterior.
 
-Estas mejoras permiten aumentar la eficiencia operativa, mejorar la accesibilidad de los datos y elevar la calidad del sistema.
+Estas mejoras contribuyen a aumentar la eficiencia operativa y accesibilidad de los datos, además de reforzar la calidad general del sistema.
 
-Reflexión sobre el control de versiones
+6. Reflexión sobre el Uso del Control de Versiones
 
-El control de versiones fue fundamental para organizar el desarrollo del proyecto, documentar cambios y mantener un historial claro y trazable.
-Gracias a Git y GitHub se pudieron:
+El control de versiones desempeñó un papel fundamental en la organización del proyecto. A través de Git y GitHub fue posible:
 
-Registrar cada cambio mediante commits descriptivos.
+Registrar cambios mediante commits descriptivos.
 
-Comparar versiones (por ejemplo, DRS_v1 vs DRS_v2).
+Comparar versiones de manera segura (por ejemplo, DRS_v1 vs DRS_v2).
 
-Colaborar sin riesgo de perder información.
+Facilitar el trabajo colaborativo sin riesgo de pérdida de información.
 
-Mantener toda la documentación del caso en un solo repositorio.
+Mantener la documentación del caso en un repositorio centralizado.
 
-El uso adecuado del control de versiones garantiza orden, respaldo y coordinación durante todo el ciclo de vida del software.
+El uso disciplinado del control de versiones garantiza orden, trazabilidad y coordinación durante el ciclo de vida del software, además de permitir auditoría y mantenimiento continuo.
 
-Tipos de sistemas de control de versiones
-Sistemas locales
+7. Tipos de Sistemas de Control de Versiones
+7.1 Sistemas locales
 
-Cada desarrollador administra su propio historial en su máquina.
+Cada desarrollador mantiene su propio historial en su máquina.
 
-Ventajas: Simples y rápidos.
+Ventajas: simplicidad y rapidez.
 
-Desventajas: Alto riesgo de pérdida; poca colaboración.
+Desventajas: alto riesgo de pérdida y poca colaboración.
 
-Sistemas centralizados
+7.2 Sistemas centralizados
 
-Un servidor principal aloja el repositorio.
+Un servidor principal almacena el repositorio.
 
-Ventajas: Control centralizado, seguridad.
+Ventajas: control centralizado y seguridad.
 
-Desventajas: Dependencia del servidor.
+Desventajas: dependencia total del servidor.
 
 Ejemplo: Subversion (SVN).
 
-Sistemas distribuidos
+7.3 Sistemas distribuidos
 
 Cada desarrollador posee una copia completa del repositorio.
 
-Ventajas: Trabajo sin conexión, rapidez, flexibilidad.
+Ventajas: trabajo sin conexión, rapidez y flexibilidad.
 
-Ejemplo: Git.
+Ejemplo: Git (el sistema más utilizado en la actualidad).
 
-Elementos y operaciones básicas en Git
+8. Elementos y Operaciones Básicas en Git
 
-Repositorio: Almacén del historial del proyecto.
+Repositorio: Contiene el historial de cambios del proyecto.
 
-Working Copy: Área de trabajo local.
+Working Copy: Área de trabajo local del desarrollador.
 
-Commit: Guarda cambios en el historial.
+Commit: Registra un conjunto de cambios en el historial.
 
-Log: Muestra la evolución del proyecto.
+Log: Muestra el registro de versiones y modificaciones.
 
-Checkout: Permite cambiar de rama o versión.
+Checkout: Permite cambiar de rama o recuperar versiones anteriores.
 
-Branch: Crea una línea paralela para nuevas funciones.
+Branch: Crea una línea paralela para funcionalidades nuevas.
 
-Push/Pull: Sincroniza cambios entre local y remoto.
+Push/Pull: Sincroniza cambios entre repositorio local y remoto.
 
-GitHub en el proyecto
+9. GitHub en el Proyecto
 
-GitHub permitió:
+GitHub fue utilizado como plataforma principal para:
 
-Centralizar todos los documentos del caso.
+Centralizar todos los documentos del caso de estudio.
 
 Subir versiones actualizadas del DRS y del Plan de Pruebas.
 
-Mantener un repositorio limpio, ordenado y con historial visible.
+Mantener un historial ordenado y limpio del proyecto.
 
-Facilitar la revisión y colaboración entre estudiantes o docentes.
+Facilitar la revisión y colaboración entre estudiantes y docentes.
 
-Autor
+10. Autor
 
-Brian Enric Andrade Muñoz
+Brian Enric Andrade Muño
