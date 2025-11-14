@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Aplicación de Control de Asistencia: Análisis, Requerimientos y Uso de Control de Versiones
 1. Introducción
 
