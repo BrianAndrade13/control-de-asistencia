@@ -133,5 +133,5 @@ GitHub fue utilizado como plataforma principal para:
 
 ## 10. Autor
 
-**Brian Enric Andrade Muño**
+**Brian Enric Andrade Muñoz**
 
