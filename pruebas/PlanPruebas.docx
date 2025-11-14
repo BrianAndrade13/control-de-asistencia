@@ -1,0 +1,60 @@
+Plan de pruebas V1:
+Pruebas unitarias
+
+Se evaluarán funciones internas como:
+
+Verificación de la ventana horaria.
+
+Validación y lectura del código QR.
+
+Rechazo de duplicados.
+
+Registro individual en bitácora.
+
+Pruebas de integración
+
+Se comprobará la interacción entre varios módulos:
+
+Registro masivo por QR.
+
+Exportación de reportes.
+
+Comportamiento de notificaciones.
+
+Correcciones justificadas del docente.
+
+Pruebas de aceptación
+
+Simulaciones completas del flujo real:
+
+Apertura de sesión → escaneo → correcciones → cierre → generación de reporte.
+
+Prueba con un grupo de 40 estudiantes (38 presentes, 2 tardanzas).
+
+Verificación de entradas generadas en la bitácora.
+
+
+Plan de pruebas V2:
+Pruebas unitarias
+
+Validación de horario.
+
+Lectura de QR.
+
+Rechazo de duplicados.
+
+Registro en bitácora.
+
+Integración:
+
+Escaneo masivo (40 estudiantes).
+
+Exportación de reportes.
+
+Notificaciones con límite alcanzado.
+
+Corrección manual fuera de ventana.
+
+End-to-End:
+
+Inicio de clase → escaneo → correcciones → cierre → reporte final.

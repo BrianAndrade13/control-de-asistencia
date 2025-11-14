@@ -1,0 +1,122 @@
+Título: Documento de Requerimientos y Plan de Pruebas
+Caso: Aplicación de Control de Asistencia
+Autor: Brian Enric Andrade Muñoz
+Fecha: 22 de octubre de 2025
+
+1. Propósito del documento
+
+Dejar claro qué funciones debe cumplir la aplicación y cómo se validará su correcto funcionamiento.
+El objetivo es tener una guía rápida para análisis y pruebas.
+
+2. Alcance
+
+Incluye:
+
+Registro de asistencia por sesión.
+
+Validación automática del horario.
+
+Opciones de consulta y reportes.
+
+Notificaciones cuando un estudiante supera límites establecidos.
+
+Registro de correcciones realizadas por los docentes.
+
+No incluye:
+
+Conexiones con plataformas externas.
+
+Módulos de pagos o calificaciones.
+
+Análisis predictivo o inteligencia de datos.
+
+3. Descripción general
+
+Aplicación web/móvil pensada para instituciones educativas.
+
+Roles principales:
+
+Administrador: crea periodos, cursos, asigna docentes y estudiantes.
+
+Docente: inicia sesiones, registra asistencias, aplica correcciones y genera reportes.
+
+Estudiante: revisa su historial.
+
+Soporte: revisa incidencias y movimientos de bitácora.
+
+Se busca un sistema práctico, rápido y entendible.
+
+4. Requerimientos funcionales (RF)
+
+RF1: Asistencia por QR (válido → Presente).
+
+RF2: Registro manual (Presente, Tarde, Ausente).
+
+RF3: Validación de horario (inicio y fin con márgenes).
+
+RF4: Reportes filtrables (curso/estudiante) y exportación.
+
+RF5: Notificaciones por inasistencias acumuladas.
+
+RF6: Bitácora para auditoría (quién, cuándo, qué cambió).
+
+RF7: Cierre automático de sesión.
+
+RF8: Anulación de QR vencido o repetido.
+
+5. Requerimientos no funcionales
+
+Rendimiento: respuesta ≤ 2 s, soporta 300 usuarios simultáneos.
+
+Disponibilidad: 99 % en horario académico.
+
+Seguridad: HTTPS, roles, tokens, bitácora inmutable.
+
+Usabilidad: interfaz simple, accesible en móviles y tablets.
+
+Compatibilidad: navegadores modernos + Android/iOS.
+
+6. Criterios de aceptación
+
+QR válido → marca inmediata. QR repetido → error.
+
+Correcciones solo durante la sesión; fuera de horario requieren motivo.
+
+Marcas fuera de ventana → rechazadas.
+
+CSV refleja exactamente los filtros aplicados.
+
+Notificaciones enviadas al sobrepasar límites.
+
+Cada acción relevante queda registrada.
+
+7. Plan de pruebas
+
+Unitarias:
+
+Validación de horario.
+
+Lectura de QR.
+
+Rechazo de duplicados.
+
+Registro en bitácora.
+
+Integración:
+
+Escaneo masivo (40 estudiantes).
+
+Exportación de reportes.
+
+Notificaciones con límite alcanzado.
+
+Corrección manual fuera de ventana.
+
+End-to-End:
+
+Inicio de clase → escaneo → correcciones → cierre → reporte final.
+
+8. Reflexión final
+
+Las pruebas permiten identificar fallos antes de la entrega.
+El sistema depende mucho de tiempos, QR y bitácoras, así que el enfoque debe ser garantizar exactitud, velocidad y trazabilidad.

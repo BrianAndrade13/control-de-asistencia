@@ -1,0 +1,122 @@
+Caso 5 – Aplicación de Control de Asistencia
+Autor: Brian Enric Andrade Muñoz
+Fecha: 22 de octubre de 2025
+
+1. Propósito del documento
+
+El presente documento tiene como finalidad definir de manera clara los requerimientos funcionales y no funcionales necesarios para el desarrollo de una aplicación orientada al control y seguimiento de la asistencia estudiantil. Paralelamente, se plantea un plan de pruebas que permitirá verificar la implementación correcta de cada requerimiento, garantizando su validez frente a los objetivos académicos y operativos de la institución.
+
+2. Alcance
+
+El sistema se centra en la gestión de asistencias por sesión de clase, incluyendo el registro mediante códigos QR, el control de horarios permitidos, la consulta de históricos y la generación de reportes descargables.
+También contempla un mecanismo de notificaciones para alertar sobre inasistencias recurrentes y una bitácora de auditoría que respalda la trazabilidad del sistema.
+
+Quedan fuera del alcance módulos que no afectan directamente al control de asistencia, como:
+
+Integración con plataformas académicas externas.
+
+Gestión de pagos, matrículas o calificaciones.
+
+Análisis avanzado de datos o reportes estadísticos complejos.
+
+3. Descripción general del sistema y perfiles de usuario
+
+La aplicación está diseñada para funcionar tanto en entornos web como móviles, facilitando el acceso desde dispositivos personales o institucionales.
+
+Los principales usuarios y sus funciones son:
+
+Administrador académico: configura periodos, cursos, asigna usuarios y define permisos.
+
+Docente: abre sesiones, registra asistencias (QR o manual), revisa reportes y realiza correcciones justificadas.
+
+Estudiante: accede a su historial y recibe notificaciones sobre su desempeño.
+
+Soporte técnico: audita registros, atiende incidencias y asegura operatividad del sistema.
+
+El diseño prioriza la rapidez de uso, la claridad de la interfaz y la fiabilidad en el registro.
+
+4. Requerimientos funcionales
+
+Registro mediante QR (RF1): La aplicación debe permitir registrar la asistencia mediante el escaneo de un código único generado por curso y sesión.
+
+Registro y corrección manual (RF2): El docente podrá registrar o corregir estados de asistencia dentro de la ventana de clase. Modificaciones fuera de este periodo requerirán justificación.
+
+Control de ventana horaria (RF3): El sistema validará que las marcas se realicen dentro del horario permitido, considerando márgenes antes del inicio y después del final de la sesión.
+
+Generación de reportes (RF4): Se podrán generar reportes filtrados por curso, estudiante o fecha, y descargarlos en formato CSV.
+
+Notificaciones automáticas (RF5): El sistema notificará al estudiante cuando supere límites establecidos de faltas o tardanzas.
+
+Bitácora de auditoría (RF6): Toda modificación quedará registrada con usuario, fecha y motivo, asegurando trazabilidad.
+
+Gestión de sesiones (RF7): La aplicación deberá permitir abrir, cerrar y anular sesiones de clase según los permisos del docente.
+
+Validación de códigos QR (RF8): Los códigos caducados, repetidos o manipulados serán rechazados automáticamente.
+
+5. Requerimientos no funcionales
+
+Rendimiento: el registro debe confirmarse en un tiempo inferior a dos segundos incluso con alta concurrencia.
+
+Disponibilidad: el sistema deberá garantizar una disponibilidad mínima del 99 % durante el horario académico.
+
+Seguridad: se empleará cifrado HTTPS, autenticación con roles y un sistema de registro inmutable para auditorías.
+
+Usabilidad: la interfaz debe ser intuitiva y permitir ejecutar las tareas principales en un máximo de tres pasos.
+
+Compatibilidad: debe funcionar adecuadamente en navegadores modernos y dispositivos móviles Android/iOS.
+
+6. Criterios de aceptación
+
+Los siguientes criterios permitirán validar cada requerimiento:
+
+Los códigos QR válidos generan un registro inmediato con estado “Presente”.
+
+Las correcciones fuera de horario requieren justificación obligatoria.
+
+Todo intento de registro fuera de la ventana definida debe ser rechazado.
+
+Los reportes generados deben contener exactamente los filtros seleccionados.
+
+Las notificaciones deberán enviarse automáticamente una vez superado el umbral de inasistencias.
+
+Cada acción relevante debe quedar documentada en la bitácora de auditoría.
+
+7. Plan de pruebas
+Pruebas unitarias
+
+Se evaluarán funciones internas como:
+
+Verificación de la ventana horaria.
+
+Validación y lectura del código QR.
+
+Rechazo de duplicados.
+
+Registro individual en bitácora.
+
+Pruebas de integración
+
+Se comprobará la interacción entre varios módulos:
+
+Registro masivo por QR.
+
+Exportación de reportes.
+
+Comportamiento de notificaciones.
+
+Correcciones justificadas del docente.
+
+Pruebas de aceptación
+
+Simulaciones completas del flujo real:
+
+Apertura de sesión → escaneo → correcciones → cierre → generación de reporte.
+
+Prueba con un grupo de 40 estudiantes (38 presentes, 2 tardanzas).
+
+Verificación de entradas generadas en la bitácora.
+
+8. Reflexión final
+
+El conjunto de requerimientos y pruebas planteados permite garantizar que el sistema satisfaga las necesidades de control académico dentro del aula. La combinación de verificación técnica y validación con escenarios reales asegura que la aplicación sea confiable, rápida y útil para la institución.
+La inclusión de bitácoras, notificaciones y validación horaria refuerza la integridad del proceso y contribuye a una gestión más transparente y automatizada.
